@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.brasajava</groupId>
-	<artifactId>elk</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>elk</name>
+	<artifactId>app</artifactId>
+	<version>local</version>
+	<name>app</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

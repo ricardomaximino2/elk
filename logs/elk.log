@@ -8,3 +8,23 @@
 2019-12-30 16:32:00.951  INFO 2376 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2019-12-30 16:32:01.397  INFO 2376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2019-12-30 16:32:01.403  INFO 2376 --- [main] com.brasajava.elk.ElkApplication         : Started ElkApplication in 6.587 seconds (JVM running for 8.099)
+2019-12-30 17:14:34.341  INFO 22356 --- [main] com.brasajava.elk.ElkApplication         : Starting ElkApplication on ITEM-S82496 with PID 22356 (C:\Users\rmgoncalves\git\docker\Elasticsearch_kibana\app\target\classes started by rmgoncalves in C:\Users\rmgoncalves\git\docker\Elasticsearch_kibana\app)
+2019-12-30 17:14:34.355  INFO 22356 --- [main] com.brasajava.elk.ElkApplication         : No active profile set, falling back to default profiles: default
+2019-12-30 17:14:38.381  INFO 22356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-30 17:14:38.408  INFO 22356 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-30 17:14:38.409  INFO 22356 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-30 17:14:38.795  INFO 22356 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-30 17:14:38.796  INFO 22356 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4174 ms
+2019-12-30 17:14:39.228  INFO 22356 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-30 17:14:39.722  INFO 22356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-30 17:14:39.729  INFO 22356 --- [main] com.brasajava.elk.ElkApplication         : Started ElkApplication in 7.188 seconds (JVM running for 9.662)
+2019-12-30 17:15:54.727  INFO 10728 --- [main] com.brasajava.elk.ElkApplicationTests    : Starting ElkApplicationTests on ITEM-S82496 with PID 10728 (started by rmgoncalves in C:\Users\rmgoncalves\git\docker\Elasticsearch_kibana\app)
+2019-12-30 17:15:54.734  INFO 10728 --- [main] com.brasajava.elk.ElkApplicationTests    : No active profile set, falling back to default profiles: default
+2019-12-30 17:15:58.534  INFO 10728 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-30 17:15:59.250  INFO 10728 --- [main] com.brasajava.elk.ElkApplicationTests    : Started ElkApplicationTests in 6.054 seconds (JVM running for 9.102)
+2019-12-30 17:16:00.626  INFO 10728 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-30 17:17:02.466  INFO 19936 --- [main] com.brasajava.elk.ElkApplicationTests    : Starting ElkApplicationTests on ITEM-S82496 with PID 19936 (started by rmgoncalves in C:\Users\rmgoncalves\git\docker\Elasticsearch_kibana\app)
+2019-12-30 17:17:02.470  INFO 19936 --- [main] com.brasajava.elk.ElkApplicationTests    : No active profile set, falling back to default profiles: default
+2019-12-30 17:17:06.175  INFO 19936 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-30 17:17:06.934  INFO 19936 --- [main] com.brasajava.elk.ElkApplicationTests    : Started ElkApplicationTests in 5.583 seconds (JVM running for 9.106)
+2019-12-30 17:17:07.807  INFO 19936 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

@@ -1,6 +1,22 @@
 version: "3.7"
 
 services:
+    app:
+        image: ricardomaximino/app:local
+        build:
+          context: ./
+          dockerfile: ./app/docker/Dockerfile
+          args:
+            - NAME=app
+            - VERSION=local
+        environment:
+          - SPRING_PROFILES_ACTIVE=local
+        ports:
+          - "8080:8080"
+        networks:
+          - brasajava
+          
+        container_name: app
 #docker run -d -h elasticsearch --name elasticsearch --net brasajava -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.5.1
     elasticsearch:
         image: elasticsearch:7.5.1
