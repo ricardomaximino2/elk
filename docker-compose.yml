@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+#docker run -d -h elasticsearch --name elasticsearch --net brasajava -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.5.1
+    elasticsearch:
+        image: elasticsearch:7.5.1
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+        environment:
+            - discovery.type=single-node
+        networks:
+            - brasajava
+        
+        container_name: elasticsearch
+    #hostname: elasticsearch
+    kibana:
+#docker run -d -p 5601:5601 -h kibana --name kibana --net brasajava --link elasticsearch_elasticsearch kibana:7.5.1    
+        image: kibana:7.5.1
+        ports:
+            - "5601:5601"
+        networks:
+            - brasajava
+        depends_on:
+            - elasticsearch
+        container_name: kibana
+    #hostname: kibana
+    logstash:
+#docker run --rm -it --name logstash --net brasajava --link elasticsearch:elasticsearch -v ./logstash/:/usr/share/logstash/pipeline/ docker.elastic.co/logstash/logstash:7.5.1    
+        image: logstash:local
+        build:
+            context: ./
+            dockerfile: ./logstash/Dockerfile
+        command: logstash -f /usr/share/logstash/logstash.conf
+        #volumes:
+        #    - ./logs/:/usr/share/logstash/
+        networks:
+            - brasajava
+        depends_on:
+            - elasticsearch
+        container_name: logstash
+    #hostname: logstash
+    
+        
+networks:
+    brasajava:
+        driver: bridge

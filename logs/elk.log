@@ -1,0 +1,10 @@
+2019-12-30 16:31:56.180  INFO 2376 --- [main] com.brasajava.elk.ElkApplication         : Starting ElkApplication on ITEM-S82496 with PID 2376 (C:\Users\rmgoncalves\git\docker\Elasticsearch_kibana\elk\target\classes started by rmgoncalves in C:\Users\rmgoncalves\git\docker\Elasticsearch_kibana\elk)
+2019-12-30 16:31:56.189  INFO 2376 --- [main] com.brasajava.elk.ElkApplication         : No active profile set, falling back to default profiles: default
+2019-12-30 16:32:00.026  INFO 2376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-30 16:32:00.055  INFO 2376 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-30 16:32:00.056  INFO 2376 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-30 16:32:00.457  INFO 2376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-30 16:32:00.458  INFO 2376 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4095 ms
+2019-12-30 16:32:00.951  INFO 2376 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-30 16:32:01.397  INFO 2376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-30 16:32:01.403  INFO 2376 --- [main] com.brasajava.elk.ElkApplication         : Started ElkApplication in 6.587 seconds (JVM running for 8.099)
