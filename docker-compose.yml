@@ -13,9 +13,16 @@ services:
           - SPRING_PROFILES_ACTIVE=local
         ports:
           - "8080:8080"
+        volumes:
+          - type: volume
+            source: logs
+            target: /logs
+            volume:
+              nocopy: true
         networks:
           - brasajava
-          
+        depends_on:
+          - logstash          
         container_name: app
 #docker run -d -h elasticsearch --name elasticsearch --net brasajava -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.5.1
     elasticsearch:
@@ -25,11 +32,12 @@ services:
             - "9300:9300"
         environment:
             - discovery.type=single-node
+        volumes:
+          - "data:/usr/share/elasticsearch/data"
         networks:
             - brasajava
         
         container_name: elasticsearch
-    #hostname: elasticsearch
     kibana:
 #docker run -d -p 5601:5601 -h kibana --name kibana --net brasajava --link elasticsearch_elasticsearch kibana:7.5.1    
         image: kibana:7.5.1
@@ -40,7 +48,6 @@ services:
         depends_on:
             - elasticsearch
         container_name: kibana
-    #hostname: kibana
     logstash:
 #docker run --rm -it --name logstash --net brasajava --link elasticsearch:elasticsearch -v ./logstash/:/usr/share/logstash/pipeline/ docker.elastic.co/logstash/logstash:7.5.1    
         image: logstash:local
@@ -48,15 +55,27 @@ services:
             context: ./
             dockerfile: ./logstash/Dockerfile
         command: logstash -f /usr/share/logstash/logstash.conf
-        #volumes:
-        #    - ./logs/:/usr/share/logstash/
         networks:
             - brasajava
         depends_on:
             - elasticsearch
         container_name: logstash
-    #hostname: logstash
+    filebeat:
+        image: filebeat:local
+        build:
+            context: ./
+            dockerfile: ./filebeat/Dockerfile
+        volumes:
+            - logs:/usr/share/filebeat/logs
+        networks:
+            - brasajava
+        depends_on:
+            - app
+        container_name: filebeat
     
+volumes:
+    logs:
+    data:
         
 networks:
     brasajava:

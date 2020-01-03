@@ -11,6 +11,21 @@ LABEL maintainer="Ricardo Maximino <ricardomaximino@hotmail.com>"
 
 VOLUME /tmp
 
+# Install filebeat
+RUN echo "Start the operation" \
+	&& mv /etc/apk/repositories /etc/apk/repositories-old \
+	&& echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" > /etc/apk/newline \
+	&& cat /etc/apk/repositories-old /etc/apk/newline > /etc/apk/repositories \
+	&& apk update \
+	&& apk add filebeat \
+	&& rm /etc/apk/repositories \
+	&& rm /etc/apk/newline \
+	&& mv /etc/apk/repositories-old /etc/apk/repositories \
+	&& apk update
+	
+# Change Mode of the execute file
+RUN chmod 777 /usr/bin/filebeat
+
 
 # Create verisure group and user and give permissions over logs folder.
 RUN addgroup brasajava\
@@ -37,8 +52,6 @@ EXPOSE ${SERVER_PORT} ${MANAGEMENT_PORT}
 #Add EXECUTABLE JAR
 COPY ./app/target/$NAME-$VERSION.jar $NAME.jar
 
-#Add external file
-#ADD path/file file
-
 
 ENTRYPOINT java -Djava.security.egd=file:/dev/./urandom -Xms64m -Xmx512m -jar /$ARTIFACT_NAME.jar -Dspring.profiles.active=$SPRING_PROFILES_ACTIVE
+
