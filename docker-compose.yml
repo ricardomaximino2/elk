@@ -53,6 +53,11 @@ services:
         depends_on:
             - elasticsearch
         container_name: kibana
+        healthcheck:
+            test: ["CMD-SHELL", "curl -I -s -L http://localhost:5601 || exit 1"]
+            interval: 30s
+            timeout: 20s
+            retries: 5
     logstash:
 #docker run --rm -it --name logstash --net brasajava --link elasticsearch:elasticsearch -v ./logstash/:/usr/share/logstash/pipeline/ docker.elastic.co/logstash/logstash:7.5.1    
         image: logstash:local
@@ -76,6 +81,7 @@ services:
             - brasajava
         depends_on:
             - app
+            - logstash
         container_name: filebeat
     
 volumes:

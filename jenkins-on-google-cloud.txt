@@ -1,0 +1,39 @@
+sudo docker run -v /var/run/docker.sock:/var/run/docker.sock -p 8080:8080 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+
+
+86cb2f5ecba44302bf8bf956f6bde174
+
+
+sudo docker run --name some-nginx -d -p 8080:80 nginx
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCcDU2IONrIMUZ/8IXeAJftmzeZhWi16NHzyKQF2MtZaTg1S2JBD+koQAkhh6FCeHyF2fAv/UQ8nC4Z9Da90Ceu5xeZa+3lPEWI8+lhpZhK3xM2ro1ucTaPDasJtRAKbu70GpPWnaNAnIN80ysigxZpt
+/ha5pLmNC/BbtNKmqc0U288n16gllOpPgqHLCPutOopqIv9NSQsFdUUkUrWyA7vDndLJ2exQ4PDWSCQPlSQT/IFB1C8hMzl3kjkcwW1mFilc98VgW7cKk4LXqBMStfonDFQDOoc+n7RKLhJpP/qaoTg90PElWE+PP0N+VNWQoEzdl5HZMZB6H8KJEhSFy
+NN9Ickg5ZV5Je4gBgyhTcO5zPyc7i4akjwBSzGd2YZkBiFhedgEMbT9gbdxEMRdIsvoKW8Yacsb4MxIz7R1I+UosiJ9BXYg77Vej3QNo7gqkmCYME/wmp7IKnnouE5Zo1nGtkSh29HDqMM1Z8T4j5stPD/X/Jh/VCN9/BpvVYhHnJ5hX10dNMIpHt+4pB
+tZkKkWPBXKfXo3hqY1qNgDd70Px9OVN7GzaK5i8RhmiEWZlkM8AcmWDmzj4nq6hg/CmIPKIFRu4YKPxe2/+1/zI/gW8JMSCFuoBpum4LVwpzA/VbySokC4v5v254CI/js7qTuGRBw8sHvY8HI/k7EXq8epw== rm.goncalves@soprasteria.com
+
+
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+sudo apt-get update 
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common -y
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 
+
+sudo apt-key fingerprint 0EBFCD88
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+
+sudo docker run hello-world
