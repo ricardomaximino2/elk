@@ -4,7 +4,7 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				${tool name: 'Maven', type: 'maven'}/bin/mvn clean
+				sh "${tool name: 'Maven', type: 'maven'}/bin/mvn clean"
 				
 			}
 		}
