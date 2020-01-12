@@ -6,7 +6,7 @@ pipeline {
 			steps {
 				echo 'Building...'
 				dir("${env.WORKSPACE}/app"){
-					sh "${tool name: 'Maven', type: 'maven'}/bin/mvn clean"
+					sh "${tool name: 'Maven', type: 'maven'}/bin/mvn clean compile"
 				}
 			}
 		}
@@ -14,7 +14,7 @@ pipeline {
 			steps {
 				echo 'Testing..'
 				dir("${env.WORKSPACE}/app"){
-					sh "${tool name: 'Maven', type: 'maven'}/bin/mvn package"
+					sh "${tool name: 'Maven', type: 'maven'}/bin/mvn clean package"
 				}
 			}
 		}
