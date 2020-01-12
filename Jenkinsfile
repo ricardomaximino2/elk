@@ -21,8 +21,7 @@ pipeline {
 		stage('Build docker image') {
 			steps {
 				echo 'Build docker image....'
-				sh 'dir app'
-				sh 'docker image ls'
+
 			}
 		}
 		stage('Deploy') {
