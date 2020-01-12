@@ -5,7 +5,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building..'
-				withMaven(maven : 'mvaven_3_6_3')j {
+				withMaven(maven : 'mvaven_3_6_3') {
 					sh 'mvn clean package'
 				}
 			}
