@@ -28,3 +28,8 @@
 2019-12-30 17:17:06.175  INFO 19936 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2019-12-30 17:17:06.934  INFO 19936 --- [main] com.brasajava.elk.ElkApplicationTests    : Started ElkApplicationTests in 5.583 seconds (JVM running for 9.106)
 2019-12-30 17:17:07.807  INFO 19936 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-09 06:39:54.498  INFO 3268 --- [main] com.brasajava.elk.ElkApplicationTests    : Starting ElkApplicationTests on IIL1693 with PID 3268 (started by rmaximin in C:\Users\rmaximin\git\elk\app)
+2020-01-09 06:39:54.502  INFO 3268 --- [main] com.brasajava.elk.ElkApplicationTests    : No active profile set, falling back to default profiles: default
+2020-01-09 06:39:56.720  INFO 3268 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-09 06:39:57.178  INFO 3268 --- [main] com.brasajava.elk.ElkApplicationTests    : Started ElkApplicationTests in 3.365 seconds (JVM running for 5.867)
+2020-01-09 06:39:57.623  INFO 3268 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
