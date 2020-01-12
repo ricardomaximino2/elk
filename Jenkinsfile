@@ -4,7 +4,7 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				echo "${tool name: 'Maven', type: 'maven'} is the maven location."
+				${tool name: 'Maven', type: 'maven'}/bin/mvn clean
 				
 			}
 		}
