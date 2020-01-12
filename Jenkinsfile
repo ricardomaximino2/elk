@@ -13,6 +13,9 @@ pipeline {
 		stage('Test') {
 			steps {
 				echo 'Testing..'
+				dir("${env.WORKSPACE}/app"){
+					sh "${tool name: 'Maven', type: 'maven'}/bin/mvn package"
+				}
 			}
 		}
 		stage('Deploy') {
