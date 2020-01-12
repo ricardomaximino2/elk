@@ -3,6 +3,7 @@ pipeline {
 	
 	stages {
 		stage('Build') {
+			echo 'Building...'
 			steps {
 				dir("${env.WORKSPACE}/app"){
 					sh "${tool name: 'Maven', type: 'maven'}/bin/mvn clean"
