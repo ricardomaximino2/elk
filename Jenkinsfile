@@ -22,7 +22,7 @@ pipeline {
 			steps {
 				echo 'Build docker image....'
 				sh 'dir app'
-				sh 'docker build -f app/docker/Dockerfile -t ricardomaximino/app:local --build-arg=NAME=app --build-arg=VERSION=local .'
+				sh 'docker image ls'
 			}
 		}
 		stage('Deploy') {
