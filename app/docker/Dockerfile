@@ -11,22 +11,6 @@ LABEL maintainer="Ricardo Maximino <ricardomaximino@hotmail.com>"
 
 VOLUME /tmp
 
-# Install filebeat
-RUN echo "Start the operation" \
-	&& mv /etc/apk/repositories /etc/apk/repositories-old \
-	&& echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" > /etc/apk/newline \
-	&& cat /etc/apk/repositories-old /etc/apk/newline > /etc/apk/repositories \
-	&& apk update \
-	&& apk add filebeat \
-	&& rm /etc/apk/repositories \
-	&& rm /etc/apk/newline \
-	&& mv /etc/apk/repositories-old /etc/apk/repositories \
-	&& apk update
-	
-# Change Mode of the execute file
-RUN chmod 777 /usr/bin/filebeat
-
-
 # Create verisure group and user and give permissions over logs folder.
 RUN addgroup brasajava\
     && adduser -s /bin/sh -D -G brasajava brasajava\
