@@ -21,6 +21,7 @@ pipeline {
 		stage('Build docker image') {
 			steps {
 				echo 'Build docker image....'
+				sh 'dir'
 				sh 'docker build -f app/docker/Dockerfile -t ricardomaximino/app:local --build-arg=NAME=app --build-arg=VERSION=local .'
 			}
 		}
