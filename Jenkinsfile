@@ -5,9 +5,9 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Building..'
-				withMaven(maven : 'mvaven_3_6_3') {
-					sh 'mvn clean package'
-				}
+				def mavenHome = tool name: 'Maven', type: 'maven'
+				def mvn = "${mavenHome}/bin/mvn"
+				sh "${mvn} clean package"
 			}
 		}
 		stage('Test') {
