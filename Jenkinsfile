@@ -4,6 +4,7 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
+				sh 'cd app'
 				sh "${tool name: 'Maven', type: 'maven'}/bin/mvn clean"
 				
 			}
