@@ -6,6 +6,7 @@ pipeline {
 			steps {
 				sh 'dir'
 				sh 'cd app'
+				sh 'dir'
 				sh "${tool name: 'Maven', type: 'maven'}/bin/mvn clean"
 				
 			}
