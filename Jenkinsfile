@@ -4,9 +4,8 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				def mavenHome = tool name: 'Maven', type: 'maven'
-				def mvn = "${mavenHome}/bin/mvn"
-				sh "${mvn} clean package"
+				echo "${tool name: 'Maven', type: 'maven'} is the maven location."
+				
 			}
 		}
 		stage('Test') {
