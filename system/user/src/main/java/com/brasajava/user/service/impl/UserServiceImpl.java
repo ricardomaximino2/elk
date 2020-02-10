@@ -6,6 +6,7 @@ import com.brasajava.user.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -42,5 +43,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(String id) {
         reposiory.deleteById(id);
+    }
+
+    @Override
+    public Boolean resetPassword(String id) {
+        return reposiory.findById(id).map(user -> {
+            user.setPassword(UUID.randomUUID().toString());
+            // sent it by e-mail
+            return true;
+        }).orElse(false);
     }
 }

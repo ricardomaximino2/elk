@@ -12,12 +12,16 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user</name>
 	<description>Demo project for Spring Boot</description>
-	
+
+	<properties>
+		<common.version>0.0.1-SNAPSHOT</common.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<groupId>com.brasajava</groupId>
+			<artifactId>common</artifactId>
+			<version>${common.version}</version>
 		</dependency>
 	</dependencies>
 

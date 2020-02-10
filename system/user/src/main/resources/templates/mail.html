@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+    <h3>
+        Hello <span th:text="${name}">Ricardo</span>,<br/><br/>
+    </h3>
+    <p>
+        You have been successfully subscribed to the <b>BRASAJAVA</b> services on
+        <span th:text="${#dates.format(creationDate)}">01-01-2020</span>
+    </p>
+    <p>
+        This is the e-mail to activate your <b>BRASAJAVA</b> account,<br/>
+        in order to do so please click <a th:href="${url}">here</a>.
+    </p>
+    <p>
+        If it wasn't you don't worry it will be automatically canceled in three day.
+        <br/><br/>
+        Kind regards,
+        <br/><br/>
+        <b>BRASAJAVA</b> System team.
+    </p>
+    <p>
+        <img src="sample.png" th:src="|cid:${image}|" />
+    </p>
+
+</body>
+</html>

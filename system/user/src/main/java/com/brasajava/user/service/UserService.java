@@ -11,4 +11,5 @@ public interface UserService {
     List<User> findAll();
     Boolean activate(String id);
     void deleteById(String id);
+    Boolean resetPassword(String id);
 }
