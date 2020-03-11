@@ -1,14 +1,17 @@
 package com.brasajava.user.api.controller;
 
-import com.brasajava.common.mail.domain.entity.Mail;
-import com.brasajava.common.mail.service.MailService;
+import com.brasajava.mail.service.MailService;
 import com.brasajava.user.api.converter.UserConverter;
 import com.brasajava.user.api.dto.UserRequestDTO;
 import com.brasajava.user.service.UserService;
 import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/user")
@@ -29,9 +32,19 @@ public class UserController {
 
     @PostMapping
     public String createUser(@RequestBody UserRequestDTO dto, Locale locale){
-        Mail mail = Mail.builder().mailTo(dto.getEmail()).mailSubject("BrasaJava Account Activation")
-                .contentType("text/html").locale(locale).firstName(dto.getFirstName()).lastName(dto.getLastName()).build();
-        mailService.sendActivationMail(mail);
+        String to = "ricardomaximino@gmail.com";
+        String[] arrayTo = {"ricardomaximino@gmail.com","ricardomaximino@gmail.com"};
+        String subject = "Subject";
+        Map<String, Object> params = new HashMap<>();
+        String template = "mail";
+        String attachmentName = "attachment.txt";
+        String text = "Some Text!!!";
+        File attachment;
+        ClassLoader classLoader = getClass().getClassLoader();
+        attachment = new File(Objects.requireNonNull(classLoader.getResource("classpath:" + attachmentName)).getFile());
+        mailService.sendSimpleMessage(to,subject, text);
+        System.out.println(attachment);
+        mailService.sendEmailWithAttachment(arrayTo, subject, params, template, attachment, attachmentName);
         return userService.create(userConverter.userRequestDtoToUser(dto)).getId();
     }
 
@@ -44,6 +57,7 @@ public class UserController {
 
     @PostMapping("/{id}/resetpassword")
     public String resetPassword(@PathVariable String id){
+        String dfdfd = "dfdfd";
         return userService.resetPassword(id)?
             messageSource.getMessage("user.password.reset.successfully.msg",null, new Locale("ES")) :
                 messageSource.getMessage("user.not.found.msg", null,new Locale("ES"));

@@ -1,0 +1,22 @@
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: localhost
+    username: username
+    password: secret
+    port: 2525
+    properties:
+      mail:
+        debug: false
+        smtp:
+          debug: false
+          auth: true
+          starttls: 
+            enable: false
+            required: false
+          quitwait:
+    protocol: smtp
+    smtp:
+      ssl:
+        trust: true
+    test-connection: false
